@@ -1,0 +1,511 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes bugfix {
+  from {
+    padding: 0;
+  }
+  to {
+    padding: 0;
+  }
+}
+@-webkit-keyframes bugfix {
+  from {
+    padding: 0;
+  }
+  to {
+    padding: 0;
+  }
+}
+#overlay-button {
+  position: absolute;
+  right: 15%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  padding: 26px 11px;
+  z-index: 5;
+  cursor: pointer;
+  user-select: none;
+}
+#overlay-button span {
+  height: 4px;
+  width: 35px;
+  border-radius: 2px;
+  background-color: white;
+  position: relative;
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
+#overlay-button span:before {
+  top: -10px;
+  visibility: visible;
+}
+#overlay-button span:after {
+  top: 10px;
+}
+#overlay-button span:before,
+#overlay-button span:after {
+  height: 4px;
+  width: 35px;
+  border-radius: 2px;
+  background-color: white;
+  position: absolute;
+  content: "";
+  transition: all 0.2s ease-in-out;
+}
+#overlay-button:hover span,
+#overlay-button:hover span:before,
+#overlay-button:hover span:after {
+  background: #14693f;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"]:checked ~ #overlay {
+  visibility: visible;
+}
+input[type="checkbox"]:checked ~ #overlay-button:hover span,
+input[type="checkbox"]:checked ~ #overlay-button span {
+  background: transparent;
+}
+input[type="checkbox"]:checked ~ #overlay-button span:before {
+  transform: rotate(45deg) translate(7px, 7px);
+  opacity: 1;
+}
+input[type="checkbox"]:checked ~ #overlay-button span:after {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+#overlay {
+  height: 100vh;
+  width: 100vw;
+  background: #32ce63;
+  z-index: 2;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+}
+#overlay.active {
+  visibility: visible;
+}
+#overlay ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  padding-left: 0;
+  list-style-type: none;
+}
+#overlay ul li {
+  padding: 1em;
+}
+#overlay ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+#overlay ul li a:hover {
+  color: #14693f;
+  transition: all 0.9s;
+}
+
+nav {
+  width: 1600px;
+  margin: 0 auto;
+  padding: 25px 0 0 0;
+}
+
+.head img {
+  width: 150px;
+}
+
+.head {
+  border: ;
+  font-family: sans-serif;
+  width: 100%;
+  height: 450px;
+  background-image: url("../img/imgHeader.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.titleHead {
+  width: 1600px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.head .button {
+  text-decoration: none;
+  position: absolute;
+  top: 20%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #14693f;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.head .button:hover {
+  background-color: #ffffff;
+  color: #14693f;
+}
+
+.titleHead p:nth-child(1) {
+  font-size: 15px;
+  color: #00ff6f;
+  margin-bottom: 15px;
+}
+
+.titleHead p:nth-child(2) {
+  font-size: 40px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  width: 570px;
+}
+
+.titleHead p:nth-child(3) {
+  font-size: 17px;
+  color: #ffffff;
+  width: 600px;
+}
+
+/*responsive*/
+
+@media (min-width: 2840px) and (max-width: 3840px) {
+
+
+  #overlay-button {
+    right: 26%;
+  }
+
+  .head .button {
+    top: 20%;
+    left: 68%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 2160px) and (max-width: 2840px) {
+
+
+  #overlay-button {
+    right: 22%;
+  }
+
+  .head .button {
+    top: 20%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 1840px) and (max-width: 2160px) {
+
+
+  #overlay-button {
+    right: 15%;
+  }
+
+  .head .button {
+    top: 20%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1840px) {
+  h
+
+  #overlay-button {
+    right: 13%;
+  }
+
+  .head .button {
+    top: 20%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+  }
+
+  nav {
+    width: 1300px;
+  }
+
+  .titleHead {
+    width: 1300px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1440px) {
+
+
+  #overlay-button {
+    right: 10%;
+  }
+
+  .head .button {
+    top: 20%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+  }
+
+  nav {
+    width: 1140px;
+  }
+
+  .titleHead {
+    width: 1140px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+
+
+  #overlay-button {
+    right: 11%;
+  }
+
+  .head .button {
+    top: 20%;
+    left: 71%;
+    transform: translate(-50%, -50%);
+  }
+
+  nav {
+    width: 900px;
+  }
+
+  .titleHead {
+    width: 900px;
+  }
+}
+
+@media (min-width: 880px) and (max-width: 1024px) {
+
+
+  #overlay-button {
+    right: 10%;
+  }
+
+  .head .button {
+    top: 20%;
+    left: 71%;
+    transform: translate(-50%, -50%);
+  }
+
+  nav {
+    width: 780px;
+  }
+
+  .titleHead {
+    width: 780px;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 880px) {
+
+
+  #overlay-button {
+    right: 9%;
+  }
+
+  .head .button {
+    top: 20%;
+    left: 67%;
+    transform: translate(-50%, -50%);
+  }
+
+  nav {
+    width: 660px;
+  }
+
+  .titleHead {
+    width: 660px;
+  }
+  .titleHead p:nth-child(2){
+    font-size: 30px;
+    width: 449px;
+    margin-bottom: 0px;
+  }
+
+  
+}
+
+@media (min-width: 620px) and (max-width: 720px) {
+
+
+  #overlay-button {
+    right: 9%;
+  }
+
+  nav {
+    width: 560px;
+  }
+
+  .titleHead {
+    width: 560px;
+    top: 53%;
+  }
+
+  .head .button {
+    top: 32.5%;
+    left: 47%;
+    width: 80%;
+    margin-top: 30px;
+    text-align: center;
+    z-index: 0;
+  }
+  .titleHead p:nth-child(2){
+    font-size: 30px;
+    width: 449px;
+    margin-bottom: 0px;
+  }
+  .titleHead p:nth-child(3){
+    width: 560px;
+  }
+}
+
+@media (min-width: 520px) and (max-width: 620px) {
+
+
+  #overlay-button {
+    right: 9%;
+  }
+
+  nav {
+    width: 460px;
+  }
+
+  .titleHead {
+    width: 460px;
+    top: 53%;
+  }
+
+  .head .button {
+    top: 32.5%;
+    left: 47%;
+    width: 70%;
+    margin-top: 30px;
+    text-align: center;
+    z-index: 0;
+  }
+  .titleHead p:nth-child(2){
+    font-size: 30px;
+    width: 449px;
+    margin-bottom: 0px;
+  }
+
+  .titleHead p:nth-child(3){
+    width: 460px;
+  }
+}
+
+@media (min-width: 420px) and (max-width: 520px) {
+  
+
+  #overlay-button {
+    right: 9%;
+  }
+
+  nav {
+    width: 360px;
+  }
+
+  .titleHead {
+    width: 360px;
+    top: 53%;
+  }
+
+  .titleHead p:nth-child(3) {
+    width: 360px;
+  }
+
+  .head .button {
+    top: 32.5%;
+    left: 47%;
+    width: 70%;
+    margin-top: 30px;
+    text-align: center;
+    z-index: 0;
+  }
+
+  .titleHead p:nth-child(2){
+    font-size: 22px;
+    width: 350px;
+    margin-bottom: 0px;
+  }
+
+  .titleHead p:nth-child(3){
+    width: 330px;
+    margin-top: 8px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 420px) {
+  
+
+  #overlay-button {
+    right: 7%;
+  }
+
+  nav {
+    width: 290px;
+  }
+
+  .titleHead {
+    width: 290px;
+    top: 53%;
+  }
+
+  .titleHead p:nth-child(3) {
+    width: 290px;
+  }
+  
+  .head img {
+    width: 122px;
+}
+
+  .head .button {
+    top: 32.5%;
+    left: 47%;
+    width: 70%;
+    margin-top: 30px;
+    text-align: center;
+    z-index: 0;
+  }
+
+  .titleHead p:nth-child(1) {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+  
+  .titleHead p:nth-child(2){
+    font-size: 17px;
+    width: 280px;
+    margin-bottom: 0px;
+  
+  }
+
+  .titleHead p:nth-child(3){
+    width: 290px;
+    margin-top: 8px;
+    font-size: 12px;
+  }
+}
